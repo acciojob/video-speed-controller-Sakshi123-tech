@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Video Player</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Video Player</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="video-container">
-        <video id="video" width="600" class="video-player">
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
 
-        <div class="controls">
-            <button id="player__button" class="player__button">►</button>
-            <button id="rewind" class="rewind">« 10s</button>
-            <button id="fast-forward" class="fast-forward">25s »</button>
+  <div class="player">
+    <video class="player__video" src="https://www.w3schools.com/html/mov_bbb.mp4"></video>
 
-            <input type="range" id="progress" class="progress__bar" value="0" max="100">
-            <div id="progress__filled" class="progress__filled"></div>
-
-            <input type="range" id="volume" class="volume" min="0" max="1" step="0.01" value="1">
-            <input type="range" id="playbackSpeed" class="playback-speed" min="0.5" max="2" step="0.1" value="1">
-        </div>
+    <div class="controls">
+      <div class="progress">
+        <div class="progress__filled"></div>
+      </div>
+      <button class="player__button toggle" title="Toggle Play">►</button>
+      <input type="range" name="volume" class="player__slider" min="0" max="1" step="0.05" value="1" title="Volume">
+      <input type="range" name="playbackRate" class="player__slider" min="0.5" max="2" step="0.1" value="1" title="Playback Speed">
+      <button class="rewind" data-skip="-10">« 10s</button>
+      <button class="skip" data-skip="25">25s »</button>
     </div>
-<script  src="./script.js">
-  //Your code goes here
-</script>
+  </div>
+
+  <script src="./scripts.js"></script>
+
 </body>
 </html>
